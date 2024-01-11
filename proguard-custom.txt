@@ -46,7 +46,15 @@
     <fields>;
 }
 
+# Firebase-X general rules
+-keep class org.apache.cordova.firebase.** { *; }
+-keep class com.google.firebase.** { *; }
 
+# Specific rules for Firebase services you're using (adjust as needed)
+-keep class com.google.firebase.messaging.** { *; }
+-keep class com.google.firebase.analytics.** { *; }
+
+# ... (add rules for other Firebase services)
 -keep public class * extends plugin.google.maps.MyPlugin
 -keepclassmembers public class plugin.google.maps.GoogleMaps {*; }
 -keepclassmembers public class * extends plugin.google.maps.MyPlugin { *; }
